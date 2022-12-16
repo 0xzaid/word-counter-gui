@@ -7,8 +7,8 @@ import tkinter as tk
 import nltk
 import tkinter.filedialog as filedialog
 import os
+import sys
 nltk.download('punkt')
-
 
 def gui():
     # Create main frame

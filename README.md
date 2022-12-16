@@ -42,3 +42,21 @@ This will install the following packages:
 Make sure you have `pip` installed on your system. If you don't have it installed, you can install it by running `pip install pip`.
 
 Note that the `requirements.txt` file only lists the packages that are used in this script. If you want to use the Punkt tokenizer, you will need to download it separately using `nltk.download('punkt')`. This is done in the script by calling `nltk.download('punkt')` at the beginning of the script.
+
+## PyInstaller
+
+1. Install Pyinstaller using `pip install pyinstaller`
+2. Run the following command to create a single executable file:
+```
+pyinstaller wc.py
+```
+This will create a `dist` folder in the same directory as `wc.py`, which will contain the compiled executable.
+Note: If you want to specify a different name for the executable or the folder where it will be placed, you can use the `--name` and `--out` options, respectively. For example:
+```
+pyinstaller wc.py --name=my_executable --out=build
+```
+This will create a `build` folder in the same directory as `wc.py`, which will contain the compiled executable named `my_executable`.
+```
+pyinstaller wc.py --add-data "assets;assets" --icon=assets/mainicon.ico --name=my_executable
+```
+This will create a `dist` folder in the same directory as `wc.py`, which will contain the compiled executable named `my_executable`. The `--add-data` option is used to include the `assets` folder in the executable. The `--icon` option is used to specify the icon that will be used for the executable.
