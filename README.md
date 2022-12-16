@@ -2,6 +2,8 @@
 
 This script defines a graphical user interface (GUI) for a word counter tool using the `tkinter` library.
 
+![wc](assets/wc.png)
+
 ## GUI Components
 
 The GUI has the following components:
