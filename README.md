@@ -33,7 +33,6 @@ The script also imports the following modules and functions:
 To install the required packages for this script, you can use `pip` and the provided `requirements.txt` file:
 ```
 pip install -r requirements.txt
-
 ```
 
 This will install the following packages:
