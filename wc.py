@@ -7,7 +7,7 @@ import tkinter as tk
 import nltk
 import tkinter.filedialog as filedialog
 import os
-import sys
+from collections import Counter
 nltk.download('punkt')
 
 def gui():
@@ -104,14 +104,18 @@ def read_file(filename):
     return content
 
 
-def most_frequent(List):
-    dict = {}
-    count, itm = 0, ''
-    for item in reversed(List):
-        dict[item] = dict.get(item, 0) + 1
-        if dict[item] >= count:
-            count, itm = dict[item], item
-    return (itm)
+def most_frequent(strings):
+    # Create a list of common words to exclude
+    common_words = ["a", "an", "the", "and", "but", "or", "for", "nor", "on", "at", "to", "from", "by", "I", "i", "you"]
+    # Join the strings into a single string and split it into a list of words
+    words = re.split(r'\W+', ' '.join(strings))
+    # Remove common words and count the frequency of each remaining word
+    word_counts = Counter(word for word in words if word.lower() not in common_words)
+    # Get the most common word and its count
+    most_common = word_counts.most_common(1)[0]
+    
+    # Return a tuple containing the word and its count
+    return (most_common[0], most_common[1])
 
 
 def count_characters(text):
